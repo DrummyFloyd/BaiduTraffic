@@ -1,7 +1,7 @@
 import time
 import os
 import numpy as np
-import cPickle
+import pickle
 
 from collections import defaultdict
 
@@ -46,5 +46,5 @@ for file in files:
             result[(time_id_5min,row_id_d,col_id_d)].append(d_query)
                
 print "dumping dict ..."
-#cPickle.dump(s_grid,open("/home/binbingliao/gyf/s_grid.pkl",'wb'))
-cPickle.dump(result, open("../pkl/query_d_grid_beijing.pkl", 'wb'))
+#pickle.dump(s_grid,open("/home/binbingliao/gyf/s_grid.pkl",'wb'))
+pickle.dump(result, open("../pkl/query_d_grid_beijing.pkl", 'wb'))

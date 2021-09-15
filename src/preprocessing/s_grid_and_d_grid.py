@@ -8,7 +8,7 @@ Created on Thu Aug 31 20:21:54 2017
 import time
 import os
 import numpy as np
-import cPickle
+import pickle
 
 def timeid(input1):
     t1=time.strptime(input1[0],"%Y-%m-%d %H:%M:%S")
@@ -51,8 +51,8 @@ for file in files:
             d_grid[time_id_5min][row_id_d][col_id_d] += 1
                
 
-#cPickle.dump(s_grid,open("/home/binbingliao/gyf/s_grid.pkl",'wb'))
-cPickle.dump(d_grid, open("H:/d_grid_beijing.pkl",'wb'))
+#pickle.dump(s_grid,open("/home/binbingliao/gyf/s_grid.pkl",'wb'))
+pickle.dump(d_grid, open("H:/d_grid_beijing.pkl",'wb'))
                  
                  
                 

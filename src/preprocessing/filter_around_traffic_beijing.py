@@ -4,7 +4,7 @@
 import os
 import math
 from collections import defaultdict
-import cPickle
+import pickle
 import numpy as np
 
 event_traffic_file = "H:/event_traffic_beijing.pkl"
@@ -12,7 +12,7 @@ event_traffic_flag_file = "H:/event_traffic_flag_beijing.pkl"
 RETAIN_RATIO_THRESHOLD = 0.9
 
 print "loading event traffic ..."
-event_traffic = cPickle.load(open(event_traffic_file, "rb"))
+event_traffic = pickle.load(open(event_traffic_file, "rb"))
 retain_rate_dict = defaultdict()
 event_traffic_flag = defaultdict()
 print "computing loss rate ..."
@@ -29,7 +29,7 @@ for link_id in event_traffic.keys():
     else:
         event_traffic_flag[link_id] = False
 
-cPickle.dump(event_traffic_flag, open(event_traffic_flag_file, "wb"))
+pickle.dump(event_traffic_flag, open(event_traffic_flag_file, "wb"))
 total_len = len(retain_rate_dict)
 bar_len = 10
 bar_cnt = np.zeros(bar_len+1, np.float)

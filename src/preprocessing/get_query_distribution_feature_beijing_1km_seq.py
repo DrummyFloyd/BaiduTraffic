@@ -3,7 +3,7 @@
 from math import sqrt, exp
 from collections  import defaultdict
 import numpy as np
-import cPickle
+import pickle
 import time
 from multiprocessing import Pool
 
@@ -109,4 +109,4 @@ while cnt < query_len:
 
 print("non_zero_cnt is {}".format(non_zero_cnt))
 
-cPickle.dump(query_distribution_dict, open(output_query_distribution_beijing_1km_file.format(impact_factor), 'wb'))
+pickle.dump(query_distribution_dict, open(output_query_distribution_beijing_1km_file.format(impact_factor), 'wb'))

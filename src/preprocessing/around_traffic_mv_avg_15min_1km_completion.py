@@ -4,7 +4,7 @@
 import os
 import math
 from collections import defaultdict
-import cPickle
+import pickle
 import numpy as np
 
 root_dir = "../../Baidu/pkl/"
@@ -12,7 +12,7 @@ event_traffic_file = root_dir + "event_traffic_beijing_1km_mv_avg_15min.pkl"
 event_traffic_completion_file = root_dir + "event_traffic_beijing_1km_mv_avg_15min_completion.pkl"
 
 print("loading event traffic ...")
-event_traffic = cPickle.load(open(event_traffic_file, "rb"))
+event_traffic = pickle.load(open(event_traffic_file, "rb"))
 
 print("computing global average week traffic ...")
 total_len = 61 * 24 * 4
@@ -58,4 +58,4 @@ for link_id in event_traffic.keys():
                 temp_traffic[time] = global_week_traffic[week_time]
     event_traffic_completion[link_id] = temp_traffic
 
-cPickle.dump(event_traffic_completion, open(event_traffic_completion_file, "wb"))
+pickle.dump(event_traffic_completion, open(event_traffic_completion_file, "wb"))

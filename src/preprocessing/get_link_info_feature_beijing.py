@@ -4,7 +4,7 @@
 import os
 import math
 from collections import defaultdict
-import cPickle
+import pickle
 import numpy as np
 
 """
@@ -126,4 +126,4 @@ def link_info_feature_extraction(link_info_file):
 
 
 link_list, link_info_feature = link_info_feature_extraction(input_event_top5_link_info_beijing_file)
-cPickle.dump((link_list, link_info_feature), open(output_event_top5_link_info_feature_beijing_file, "wb"))
+pickle.dump((link_list, link_info_feature), open(output_event_top5_link_info_feature_beijing_file, "wb"))

@@ -5,11 +5,11 @@ Created on Fri Sep 29 15:28:07 2017
 @author: user
 """
 
-import cPickle
+import pickle
 import numpy as np
 
 
-d=cPickle.load(open("H:/d_grid_beijing.pkl",'rb'))
+d=pickle.load(open("H:/d_grid_beijing.pkl",'rb'))
 
 t=17568
 r=72

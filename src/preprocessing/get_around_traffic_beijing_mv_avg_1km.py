@@ -4,7 +4,7 @@
 import os
 import math
 from collections import defaultdict
-import cPickle
+import pickle
 import numpy as np
 import time
 
@@ -82,4 +82,4 @@ for temp_link in all_link_set:
     except:
         continue
 print("valid_link_num is {}".format(len(event_traffic.keys())))
-cPickle.dump(event_traffic, open(event_traffic_file, "wb"))
+pickle.dump(event_traffic, open(event_traffic_file, "wb"))
